@@ -17,27 +17,38 @@ public class PlayerScript : MonoBehaviour {
 		{
 			GetComponent<SpriteRenderer> ().flipX = true;
 
+			animator.SetBool("Running", true);
+
 			Vector3 position = this.transform.position;
 			position.x -= 0.1f;
 			this.transform.position = position;
 
-			animator.Play ("Running");
+
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			GetComponent<SpriteRenderer> ().flipX = false;
 
+			animator.SetBool("Running", true);
+
 			Vector3 position = this.transform.position;
 			position.x += 0.1f;
 			this.transform.position = position;
-
-			animator.Play ("Running");
 		}
 
 		if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) {
-			animator.Play ("Idle");
-		
+			animator.SetBool("Running", false);
+		}
+
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			animator.SetBool("Jumping", true);
+
+			Vector3 position = this.transform.position;
+			position.y += 0.1f;
+			this.transform.position = position;
+
+
 		}
 	}
 }
