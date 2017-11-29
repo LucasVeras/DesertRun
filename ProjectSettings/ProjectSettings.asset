@@ -599,12 +599,13 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: e9b0c7de-c8e4-46f2-9bfa-8d108d55cae6
+  cloudProjectId: 61bd3ec0-dc46-4394-a866-3da74e40414c
   projectName: DesertRun
-  organizationId: unity_ppxb-oxcezyw6g
+  organizationId: lucasveras16
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
