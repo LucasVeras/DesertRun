@@ -4,51 +4,45 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-	public Animator animator;
+	public int playerSpeed = 10;
+	public int playerJumpPower = 1250;
 
-	// Use this for initialization
-	void Start () {
-		
+	private bool facingRight = false;
+	private float moveX;
+
+	void Update(){
+		PlayerMove ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey(KeyCode.LeftArrow))
-		{
+
+	void PlayerMove(){
+		moveX = Input.GetAxis ("Horizontal");
+
+		if (Input.GetButtonDown ("Jump")){
+			Jump ();
+
+			GetComponent<Animator> ().SetBool ("isJumping", true);
+			GetComponent<Animator> ().SetBool ("isRunning", false);
+		}
+
+		if (moveX != 0) {
+			GetComponent<Animator> ().SetBool ("isRunning", true);
+		} else {
+			GetComponent<Animator> ().SetBool ("isRunning", false);
+		}
+
+		if (moveX < 0.0f) {
 			GetComponent<SpriteRenderer> ().flipX = true;
-
-			animator.SetBool("Running", true);
-
-			Vector3 position = this.transform.position;
-			position.x -= 0.1f;
-			this.transform.position = position;
-
-
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
+		} else if (moveX > 0.0f){
 			GetComponent<SpriteRenderer> ().flipX = false;
-
-			animator.SetBool("Running", true);
-
-			Vector3 position = this.transform.position;
-			position.x += 0.1f;
-			this.transform.position = position;
 		}
 
-		if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) {
-			animator.SetBool("Running", false);
-		}
-
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			animator.SetBool("Jumping", true);
-
-			Vector3 position = this.transform.position;
-			position.y += 0.1f;
-			this.transform.position = position;
-
-
-		}
+		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D> ().velocity.y);
 	}
+
+	void Jump() {
+		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
+	}
+
+
+		
 }
