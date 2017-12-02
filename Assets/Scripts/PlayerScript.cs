@@ -9,8 +9,17 @@ public class PlayerScript : MonoBehaviour {
 
 	private float moveX;
 	private bool isJumping = false;
+	private float velocityY = 0;
 
 	void Update(){
+		velocityY = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
+
+		if (velocityY == 0) {
+			GetComponent<Animator> ().SetBool ("isJumping", false);
+
+			isJumping = false;
+		}
+
 		PlayerMove ();
 	}
 
@@ -25,10 +34,9 @@ public class PlayerScript : MonoBehaviour {
 			}
 
 			GetComponent<Animator> ().SetBool ("isJumping", true);
-			GetComponent<Animator> ().SetBool ("isRunning", false);
 		}
 
-		if (moveX != 0) {
+		if (moveX != 0 && velocityY == 0) {
 			GetComponent<Animator> ().SetBool ("isRunning", true);
 		} else {
 			GetComponent<Animator> ().SetBool ("isRunning", false);
@@ -46,7 +54,5 @@ public class PlayerScript : MonoBehaviour {
 	void Jump() {
 		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
 	}
-
-
 		
 }
