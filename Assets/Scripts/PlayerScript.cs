@@ -7,8 +7,8 @@ public class PlayerScript : MonoBehaviour {
 	public int playerSpeed = 10;
 	public int playerJumpPower = 1250;
 
-	private bool facingRight = false;
 	private float moveX;
+	private bool isJumping = false;
 
 	void Update(){
 		PlayerMove ();
@@ -18,7 +18,11 @@ public class PlayerScript : MonoBehaviour {
 		moveX = Input.GetAxis ("Horizontal");
 
 		if (Input.GetButtonDown ("Jump")){
-			Jump ();
+			if (!isJumping){
+				isJumping = true;
+
+				Jump ();
+			}
 
 			GetComponent<Animator> ().SetBool ("isJumping", true);
 			GetComponent<Animator> ().SetBool ("isRunning", false);
