@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
 	private float moveX;
 	private bool isJumping = false;
 	private bool isDead = false;
+	private bool isOnGround = true;
 	private float velocityY = 0;
 
 	void Update(){
@@ -57,7 +58,10 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Jump() {
-		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
+		if (isOnGround == true) {
+			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
+			isOnGround = false;
+		}
 	}
 
 	void Die(){
@@ -75,6 +79,8 @@ public class PlayerScript : MonoBehaviour {
 			if (health <= 0) { 
 				Die ();
 			}
+		} else if (obj.gameObject.tag == "Ground") {
+			isOnGround = true;
 		}
 	}
 		
