@@ -53,7 +53,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4692049574953966}
-  - component: {fileID: 61097319837036942}
   m_Layer: 0
   m_Name: Cacto3
   m_TagString: Enemy
@@ -68,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144574693523488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.334, y: -0.146, z: 0}
-  m_LocalScale: {x: 0.47053522, y: 0.47053522, z: 0.47053522}
+  m_LocalPosition: {x: -0.333, y: -0.145, z: 0}
+  m_LocalScale: {x: 0.472053, y: 0.472053, z: 0.472053}
   m_Children: []
   m_Father: {fileID: 4692049574953966}
   m_RootOrder: 1
@@ -81,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924835218264914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.418347, y: 0.1543513, z: 0}
+  m_LocalPosition: {x: -4.2527905, y: -4.6290207, z: 0}
   m_LocalScale: {x: 1.9658616, y: 1.9658616, z: 1.9658616}
   m_Children:
   - {fileID: 4950629326875812}
@@ -96,37 +95,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871519329348538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.124, y: -0.067, z: 0}
-  m_LocalScale: {x: 0.8141855, y: 0.8141855, z: 0.8141855}
+  m_LocalPosition: {x: -0.122, y: -0.066, z: 0}
+  m_LocalScale: {x: 0.81681174, y: 0.81681174, z: 0.81681174}
   m_Children: []
   m_Father: {fileID: 4692049574953966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61097319837036942
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924835218264914}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.39156002, y: -0.06457172}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6464262, y: 0.3990338}
-  m_EdgeRadius: 0
 --- !u!61 &61647470614760098
 BoxCollider2D:
   m_ObjectHideFlags: 1

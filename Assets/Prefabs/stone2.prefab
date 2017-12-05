@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212302222866726304}
   - component: {fileID: 58302825196797496}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: stone2
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094844190268870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.859, y: 3.435, z: 0}
+  m_LocalPosition: {x: 4.2190742, y: -4.837258, z: 0}
   m_LocalScale: {x: 0.84081113, y: 0.84081113, z: 0.84081113}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,9 +53,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1611205}
   serializedVersion: 2
-  m_Radius: 0.62
+  m_Radius: 0.45887947
 --- !u!212 &212302222866726304
 SpriteRenderer:
   m_ObjectHideFlags: 1
