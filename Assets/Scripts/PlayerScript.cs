@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
+	public int health = 100;
+
 	public int playerSpeed = 10;
 	public int playerJumpPower = 1250;
 
 	private float moveX;
 	private bool isJumping = false;
+	private bool isDead = false;
 	private float velocityY = 0;
 
 	void Update(){
-		velocityY = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
+		if (!isDead){
+			velocityY = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
 
-		if (velocityY == 0) {
-			GetComponent<Animator> ().SetBool ("isJumping", false);
+			if (velocityY == 0) {
+				GetComponent<Animator> ().SetBool ("isJumping", false);
 
-			isJumping = false;
+				isJumping = false;
+			}
+
+			PlayerMove ();
 		}
-
-		PlayerMove ();
 	}
 
 	void PlayerMove(){
@@ -55,8 +60,22 @@ public class PlayerScript : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
 	}
 
-	void OnTriggerEnter (Collider other){
-		Debug.Log ("TESTE");
+	void Die(){
+		isDead = true;
+
+		GetComponent<Animator> ().SetBool ("isDying", true);
+	}
+		
+	void OnTriggerEnter2D(Collider2D obj) {
+		Debug.Log(obj.gameObject.tag);
+
+		if (obj.gameObject.tag == "Enemy") {
+			health -= 50;
+
+			if (health <= 0) { 
+				Die ();
+			}
+		}
 	}
 		
 }
