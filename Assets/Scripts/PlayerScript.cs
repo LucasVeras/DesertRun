@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour {
 	void PlayerMove(){
 		moveX = Input.GetAxis ("Horizontal");
 
-		if (Input.GetButtonDown ("Jump")){
+		if (Input.GetKey (KeyCode.UpArrow)){
 			if (!isJumping){
 				isJumping = true;
 
@@ -53,6 +53,10 @@ public class PlayerScript : MonoBehaviour {
 
 	void Jump() {
 		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
+	}
+
+	void OnTriggerEnter (Collider other){
+		Debug.Log ("TESTE");
 	}
 		
 }
