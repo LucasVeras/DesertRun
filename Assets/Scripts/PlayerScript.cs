@@ -13,11 +13,15 @@ public class PlayerScript : MonoBehaviour {
 
 	private bool isDead = false;
 	private bool isOnGround = true;
+	private bool wonScene = false;
 
 	void Update(){
-		if (!isDead){
-			PlayerMove ();
+		if (!wonScene) {
+			if (!isDead || wonScene){
+				PlayerMove ();
+			}
 		}
+
 	}
 
 	void PlayerMove(){
@@ -81,7 +85,11 @@ public class PlayerScript : MonoBehaviour {
 
 			health += 50;
 			break;
-		}
+		case "WinScene":
+			wonScene = true;
+
+			break;
+	}
 	}
 		
 }
