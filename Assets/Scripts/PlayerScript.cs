@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour {
 				PlayerMove ();
 			}
 		}
-
 	}
 
 	void PlayerMove(){
@@ -51,10 +50,9 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Jump() {
-		if (isOnGround == true) {
-			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
-			isOnGround = false;
-		}
+		GetComponent<Rigidbody2D> ().AddForce (Vector2.up * playerJumpPower);
+		isOnGround = false;
+
 	}
 
 	void Die(){
@@ -64,8 +62,6 @@ public class PlayerScript : MonoBehaviour {
 	}
 		
 	void OnTriggerEnter2D(Collider2D obj) {
-		Debug.Log(obj.gameObject.tag);
-
 		switch (obj.gameObject.tag){
 		case "Enemy":
 			health -= 50;
@@ -76,7 +72,6 @@ public class PlayerScript : MonoBehaviour {
 
 			break;
 		case "Ground":
-			isOnGround = true;
 			GetComponent<Animator> ().SetBool ("isJumping", false);
 
 			break;
@@ -89,7 +84,16 @@ public class PlayerScript : MonoBehaviour {
 			wonScene = true;
 
 			break;
-	}
+		}
 	}
 		
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.contacts.Length > 0){
+			ContactPoint2D contact = collision.contacts[0];
+			if(Vector3.Dot(contact.normal, Vector3.up) > 0.5){
+				isOnGround = true;
+				Debug.Log("Collision on Bottom");
+			}
+		}
+	}
 }
