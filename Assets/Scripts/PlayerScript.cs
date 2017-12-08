@@ -15,6 +15,17 @@ public class PlayerScript : MonoBehaviour {
 	private bool isOnGround = true;
 	private bool wonScene = false;
 
+	private PlayerHealth playerHealth;
+
+//	void awake(){
+////		playerHealth = GameObject.GetComponent <PlayerHealth> ();
+//	}
+
+	void Start(){
+		GameObject go = GameObject.Find("HealthUI");
+		playerHealth = (PlayerHealth)go.GetComponent<PlayerHealth> ();
+	}
+
 	void Update(){
 		if (!wonScene) {
 			if (!isDead || wonScene){
@@ -66,6 +77,8 @@ public class PlayerScript : MonoBehaviour {
 		case "Enemy":
 			health -= 50;
 
+			playerHealth.loseLife();
+
 			if (health <= 0) { 
 				Die ();
 			}
@@ -79,6 +92,7 @@ public class PlayerScript : MonoBehaviour {
 			Destroy (obj.gameObject);
 
 			health += 50;
+			playerHealth.gainLife();
 			break;
 		case "WinScene":
 			wonScene = true;
@@ -86,6 +100,19 @@ public class PlayerScript : MonoBehaviour {
 			break;
 		}
 	}
+
+//	void OnTriggerStay2D(Collider2D obj){
+//		switch (obj.gameObject.tag) {
+//		case "Enemy":
+//			health -= 50;
+//
+//			if (health <= 0) { 
+//				Die ();
+//			}
+//
+//			break;
+//		}
+//	}
 		
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.contacts.Length > 0){
