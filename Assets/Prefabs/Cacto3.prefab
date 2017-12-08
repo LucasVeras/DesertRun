@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4605296793048136}
   - component: {fileID: 212772908847599068}
-  - component: {fileID: 61647470614760098}
+  - component: {fileID: 58362184480598734}
   m_Layer: 0
   m_Name: Cactus (3)
   m_TagString: Enemy
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4950629326875812}
   - component: {fileID: 212476402503575444}
-  - component: {fileID: 61716907546827050}
+  - component: {fileID: 58637848111886922}
   m_Layer: 0
   m_Name: Cactus (2)
   m_TagString: Enemy
@@ -67,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144574693523488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.333, y: -0.145, z: 0}
-  m_LocalScale: {x: 0.472053, y: 0.472053, z: 0.472053}
+  m_LocalPosition: {x: -0.34466645, y: -0.17377374, z: 0}
+  m_LocalScale: {x: 0.2996781, y: 0.2996781, z: 0.2996781}
   m_Children: []
   m_Father: {fileID: 4692049574953966}
   m_RootOrder: 1
@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924835218264914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2527905, y: -4.6290207, z: 0}
+  m_LocalPosition: {x: 0.08, y: 4.76, z: 0}
   m_LocalScale: {x: 1.9658616, y: 1.9658616, z: 1.9658616}
   m_Children:
   - {fileID: 4950629326875812}
@@ -95,14 +95,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871519329348538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.122, y: -0.066, z: 0}
-  m_LocalScale: {x: 0.81681174, y: 0.81681174, z: 0.81681174}
+  m_LocalPosition: {x: -0.254, y: -0.143, z: 0}
+  m_LocalScale: {x: 0.43659607, y: 0.43659607, z: 0.43659607}
   m_Children: []
   m_Father: {fileID: 4692049574953966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61647470614760098
-BoxCollider2D:
+--- !u!58 &58362184480598734
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -113,21 +113,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.45}
-    newSize: {x: 0.7, y: 0.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.00000012646845, y: -0.050980397}
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.45}
-  m_EdgeRadius: 0
---- !u!61 &61716907546827050
-BoxCollider2D:
+  m_Radius: 0.29901963
+--- !u!58 &58637848111886922
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -138,19 +128,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.45}
-    newSize: {x: 0.7, y: 0.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.000000034723012, y: -0.054989167}
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.45}
-  m_EdgeRadius: 0
+  m_Radius: 0.29501128
 --- !u!212 &212476402503575444
 SpriteRenderer:
   m_ObjectHideFlags: 1
