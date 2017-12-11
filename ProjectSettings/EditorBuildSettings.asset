@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase4.unity
     guid: a25c04c29ab114f1e87931f6cb9cf7fa
+  - enabled: 1
+    path: Assets/Scenes/TrocarFase.unity
+    guid: ebbd3529e2db345a7b4cea7cb52c587c

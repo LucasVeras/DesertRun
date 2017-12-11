@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -70,6 +71,7 @@ public class PlayerScript : MonoBehaviour {
 		isDead = true;
 
 		GetComponent<Animator> ().SetBool ("isDying", true);
+		SceneManager.LoadScene ("TrocarFase", LoadSceneMode.Additive);
 	}
 		
 	void OnTriggerEnter2D(Collider2D obj) {
@@ -96,7 +98,7 @@ public class PlayerScript : MonoBehaviour {
 			break;
 		case "WinScene":
 			wonScene = true;
-
+			SceneManager.LoadScene ("TrocarFase", LoadSceneMode.Additive);
 			break;
 		}
 	}
